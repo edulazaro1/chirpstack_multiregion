@@ -15,13 +15,13 @@ services:
       - REDIS_HOST=redis
       - POSTGRESQL_HOST=postgres
     ports:
-      - 8080:8080
+      - 8081:8081
 
   chirpstack-gateway-bridge_au915:
     image: chirpstack/chirpstack-gateway-bridge:4
     restart: unless-stopped
     ports:
-      - 1700:1700/udp
+      - 1705:1705/udp
     volumes:
       - ./configuration/chirpstack-gateway-bridge/au915_0:/etc/chirpstack-gateway-bridge
     environment:
@@ -35,7 +35,7 @@ services:
     image: chirpstack/chirpstack-gateway-bridge:4
     restart: unless-stopped
     ports:
-      - 1701:1701/udp
+      - 1706:1706/udp
     volumes:
       - ./configuration/chirpstack-gateway-bridge/us915_0:/etc/chirpstack-gateway-bridge
     environment:
@@ -48,9 +48,9 @@ services:
   chirpstack-rest-api:
     image: chirpstack/chirpstack-rest-api:4
     restart: unless-stopped
-    command: --server chirpstack:8080 --bind 0.0.0.0:8090 --insecure
+    command: --server chirpstack:8081 --bind 0.0.0.0:8094 --insecure
     ports:
-      - 8090:8090
+      - 8094:8094
     depends_on:
       - chirpstack
 
@@ -74,7 +74,7 @@ services:
     image: eclipse-mosquitto:2
     restart: unless-stopped
     ports:
-      - 1883:1883
+      - 1884:1883
     volumes:
       - ./configuration/mosquitto/config/:/mosquitto/config/
 

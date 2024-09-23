@@ -20,7 +20,7 @@ type="semtech_udp"
   # This is the listener to which the packet-forwarder forwards its data
   # so make sure the 'serv_port_up' and 'serv_port_down' from your
   # packet-forwarder matches this port.
-  udp_bind = "0.0.0.0:1701"
+  udp_bind = "0.0.0.0:1706"
 # Integration configuration.
 [integration]
 # Payload marshaler.
@@ -53,7 +53,7 @@ marshaler="json"
     # Generic MQTT authentication.
     [integration.mqtt.auth.generic]
     # MQTT server (e.g. scheme://host:port where scheme is tcp, ssl or ws)
-    server="tcp://mosquitto:1883"
+    server="tcp://mosquitto:1884"
 
     # Connect with the given username (optional)
     username=""

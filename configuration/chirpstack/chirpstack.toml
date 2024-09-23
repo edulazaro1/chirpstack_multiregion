@@ -76,7 +76,7 @@
 [api]
 
   # interface:port to bind the API interface to.
-  bind="0.0.0.0:8080"
+  bind="0.0.0.0:8081"
 
   # Secret.
   #
@@ -91,5 +91,5 @@
   enabled=["mqtt"]
 
   [integration.mqtt]
-    server="tcp://$MQTT_BROKER_HOST:1883/"
+    server="tcp://$MQTT_BROKER_HOST:1884/"
     json=true
