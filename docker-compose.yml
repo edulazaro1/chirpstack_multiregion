@@ -21,7 +21,7 @@ services:
     image: chirpstack/chirpstack-gateway-bridge:4
     restart: unless-stopped
     ports:
-      - 1705:1705/udp
+      - 1700:1701/udp
     volumes:
       - ./configuration/chirpstack-gateway-bridge/au915_0:/etc/chirpstack-gateway-bridge
     environment:
@@ -35,7 +35,7 @@ services:
     image: chirpstack/chirpstack-gateway-bridge:4
     restart: unless-stopped
     ports:
-      - 1706:1706/udp
+      - 1700:1702/udp
     volumes:
       - ./configuration/chirpstack-gateway-bridge/us915_0:/etc/chirpstack-gateway-bridge
     environment:
